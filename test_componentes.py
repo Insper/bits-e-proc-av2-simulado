@@ -91,7 +91,7 @@ def test_exe4_ula():
         inverte_a.next = 1
         inverte_b.next = 1
         yield delay(1)
-        assert resultado == ((not a) or (not b))
+        assert resultado == ((~ a) | (~ b))
 
         selecao.next = 2
         inverte_a.next = 0
@@ -114,4 +114,5 @@ def test_exe4_ula():
 
     dut = exe4_ula(a, b, inverte_a, inverte_b, c_in, c_out, selecao, zero, resultado)
     sim = Simulation(dut, stimulus)
+    traceSignals(dut)
     sim.run()
