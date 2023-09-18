@@ -4,10 +4,15 @@
 
 """
 
-
+import pytest
 from myhdl import *
-from .ula_aux import *
+from ula_aux import *
 
+try:
+    from telemetry import telemetryMark
+    pytestmark = telemetryMark()
+except ImportError as err:
+    print("Telemetry não importado")
 
 def exe1(a, b, c, q):
     @always_comb
