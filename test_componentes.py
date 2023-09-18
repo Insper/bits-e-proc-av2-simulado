@@ -114,5 +114,4 @@ def test_exe4_ula():
 
     dut = exe4_ula(a, b, inverte_a, inverte_b, c_in, c_out, selecao, zero, resultado)
     sim = Simulation(dut, stimulus)
-    traceSignals(dut)
     sim.run()
