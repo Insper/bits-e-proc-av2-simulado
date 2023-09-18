@@ -15,11 +15,16 @@ como usar o seu tempo.
 
 Você deve:
 
-1. clonar o repositório que foi gerado pelo link (e trabalhar nele)
-1. editar o arquivo `ALUNO.yml`
+1. Usar o codespace na prova
 1. não esqueça de dar `commit` e `push` a cada questão
 
-> Todas as questões possuem testes, para executar: `pytest -k QUESTAO`
+Lembre de executar uma única vez `telemetry auth` no codespace.
+
+> Todas as questões possuem testes, para executar: `pytest -s -k QUESTAO`
+
+Você deve realizar as implementações no arquivo: 
+
+- `coponentes.py`
 
 ### Questão 1
 
@@ -27,11 +32,11 @@ Você deve:
 | --------------- | ------ |
 | `exe1(a,b,c,q)` | 2 (HW) |
 
-- Testar com: `pytest -k exe1 -s`
+- Testar com: `pytest -s -k exe1 `
 
 Implemente o circuito a seguir em MyHDL
 
-![](1a.png)
+![](imgs/1a.png)
 
 Saiba que:
 
@@ -43,7 +48,7 @@ Saiba que:
 | --------------- | ------ |
 | `exe2(p,q,r,s)` | 4 (HW) |
 
-- Testar com: `pytest -k exe2 -s`
+- Testar com: `pytest -s -k exe2`
 
 Você deve desenvolver um circuito em MyHDL que resolve o problema a seguir.
 
@@ -54,7 +59,7 @@ Veja a Figura a seguir. Em uma simples máquina copiadora, um sinal de parada (S
 
 A presença de papel na bandeja de alimentação é indicada por um nível ALTO no sinal lógico P. Cada uma das microchaves (P,Q) produz sinais lógicos ALTO sempre que um papel estiver passando por ela.
 
-![](2a.png)
+![](imgs/2a.png)
 
 - `p`, `q`, `r` e `s`: São sinais do tipo `bool`
 
@@ -67,7 +72,7 @@ A presença de papel na bandeja de alimentação é indicada por um nível ALTO 
 
 A Figura a seguir representa um circuito multiplicador de números inteiros positivos (unsigned) que recebe dois números binários de dois bits: `x1x0` e `y1y0` e gera um número binário de quatro bits de saída: `z3z2z1z0` igual ao produto aritmético dos dois números de entrada.
 
-![](3a.png)
+![](imgs/3a.png)
 
 ### (a)
 
@@ -79,7 +84,7 @@ Encontre a equação que realiza a multiplicação entre dois vetores de dois bi
 
 Implemente em MyHDL a solução para o multiplicador.
 
-- Testar com: `pytest -k exe3 -s`
+- Testar com: `pytest -s -k exe3`
 
 Saiba que:
 
@@ -95,7 +100,7 @@ Saiba que:
 
 A ULA a seguir é utilizada no processador chamado MIPS:
 
-![](ula.png)
+![](imgs/ula.png)
 
 E possui as conexões:
 
@@ -130,7 +135,7 @@ Preencha o estado dos pinos de controle para cada uma das funções abaixo.
 | ----------------------------------------------------------------------------- | ------ |
 | `exe4_ula(a, b, inverte_a, inverte_b, c_in, c_out, selecao, zero, resultado)` | 6 (HW) |
 
-- Testar com `pytest -k exe4_ula`
+- Testar com `pytest -s -k exe4_ula`
 
 Implemente a ULA em MyHDL utilizando os componentes (que já estão implementados no arquivo `ula_aux.py`): `mux2Way`, `adder`, `mux4way` .
 
@@ -157,7 +162,3 @@ Ideias que eu tive quando estava bolando o simulado:
 - Como um somador funciona?
 
 - Algo similar ao display de 7 segmentos... não sei o que exatamente.
-
-- O exemplo
-
-- (meio viagem) Um módulo que recebe um pacote TCP e verifica alguns campos. (https://www.vskills.in/certification/tutorial/tcp-ip-packet-formats-and-ports/)
