@@ -91,7 +91,7 @@ def test_exe4_ula():
         inverte_a.next = 1
         inverte_b.next = 1
         yield delay(1)
-        assert resultado == ((not a) | (not b))
+        assert resultado == ((~a) | (~b))
 
         selecao.next = 2
         inverte_a.next = 0

@@ -55,8 +55,8 @@ def exe4_ula(a, b, inverte_a, inverte_b, c_in, c_out, selecao, zero, resultado):
     @always_comb
     def comb():
         resultado.next = muxout
-        aneg.next = not a
-        bneg.next = not b
+        aneg.next = ~a
+        bneg.next = ~b
 
         andout.next = iaout & ibout
         orout.next = iaout | ibout
